@@ -1,0 +1,40 @@
+<?php  
+ 
+  $agent=strtolower($_SERVER['HTTP_USER_AGENT']);
+	$mobile=0;
+	$phoneLists = array ( 
+		'blazer' ,
+		'palm' ,
+		'handspring' ,
+		'nokia' ,
+		'kyocera',
+		'samsung' ,
+		'motorola' ,
+		'smartphone', 
+		'windows ce' ,
+		'blackberry' ,
+		'wap' ,
+		'mobile' ,
+		'sonyericsson',
+		'playStation portable', 
+		'lg', 
+		'mmp',
+		'opwv',
+		'symbian',
+		'epoc' 
+	); 
+		
+	foreach($phoneLists as $phoneType){
+		if(stristr($agent,$phoneType)){
+			$mobile=1;
+		}
+	}
+  
+	if ($mobile==1){  
+		echo"You are browsing from handphone";
+	}else{ 
+  	echo"You are browsing from PC";
+	}
+
+  
+?>
